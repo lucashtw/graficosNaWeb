@@ -18,8 +18,15 @@
                         ['Cartão de crédito', 900],
                         ['Alimentação', 260]
                 ]);
-                var grafico = new google.visualization.PieChart(document.getElementById('graficoPizza'));
-                grafico.draw(tabela);
+
+                var opcoes = {
+                    'title': 'Tipos de Gastos',
+                    'height': 300,
+                    'width': 400
+                };
+
+                var grafico = new google.visualization.PieChart(document.getElementById('graficoPizza'));/*gerando*/
+                grafico.draw(tabela, opcoes);
             }
 
             google.charts.setOnLoadCallback(desenharPizza);
