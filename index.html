@@ -4,7 +4,7 @@
         <script>
 
 
-            google.charts.load('current',{'packages':['corechart']});
+            google.charts.load('current',{'packages':['corechart'],'language':'pt'});
 
             function desenharGraficos(){
                 //pizza
@@ -60,8 +60,15 @@
 
                 ]);
 
+                var opcoes = {
+                    title: 'Gastos por mês',
+                    height: 400,
+                    width: 850,
+                    vAxis: {format: 'currency'}
+                }
+
                 var grafico = new google.visualization.LineChart(document.getElementById('graficoLinha'));
-                grafico.draw(tabela);
+                grafico.draw(tabela,opcoes);
 
 
 
