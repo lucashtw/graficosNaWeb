@@ -21,9 +21,19 @@
 
                 var opcoes = {
                     title: 'Tipos de Gastos',
-                    height: 300,
-                    width: 400,
-                    is3D: true
+                    height: 500,
+                    width: 900,
+                    is3D: true,
+                    legend: 'labeled',
+                    pieSliceText: 'value',
+                    //colors:['grey','red','yellow','blue','pink','purple']
+                    slices: {
+                        1:{color:'grey'},
+                        2:{color:'#a6a6a6'},
+                        3:{color:'grey'},
+                        4:{offset: 0.4},
+                        5:{color:'grey'}
+                    }
                 };
 
                 var grafico = new google.visualization.PieChart(document.getElementById('graficoPizza'));/*gerando*/
