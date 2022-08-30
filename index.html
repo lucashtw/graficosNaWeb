@@ -62,9 +62,17 @@
 
                 var opcoes = {
                     title: 'Gastos por mês',
-                    height: 400,
+                    height: 200,
                     width: 850,
-                    vAxis: {format: 'currency'}
+                    vAxis: {
+                        format: 'currency',
+                        gridlines: {
+                            count:5,
+                            color:'transparent'
+                        }
+                    },
+                    curveType: 'function',
+                    legend: 'none'
                 }
 
                 var grafico = new google.visualization.LineChart(document.getElementById('graficoLinha'));
