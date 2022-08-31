@@ -106,6 +106,25 @@ function desenharGraficos(){
 
     var grafico = new google.visualization.ColumnChart(
         document.getElementById('graficoColuna')); 
-    grafico.draw(tabela,opcoes);       
+    grafico.draw(tabela,opcoes); 
+    
+    //colunas supresa
+    var tabela = new google.visualization.DataTable();
+    tabela.addColumn('string','categorias');
+    tabela.addColumn('number','valores');
+        tabela.addRows([
+            ['Educação',2000],
+            ['Transporte',500],
+            ['Lazer',230],
+            ['Saúde',100],
+            ['Cartão de crédito', 900],
+            ['Alimentação', 260]
+        ]);
+
+        var grafico = new google.visualization.ColumnChart(
+            document.getElementById('graficoColunaSurpresa'));
+        grafico.draw(tabela);
+
+
 
 }
