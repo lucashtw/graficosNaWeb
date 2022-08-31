@@ -112,18 +112,26 @@ function desenharGraficos(){
     var tabela = new google.visualization.DataTable();
     tabela.addColumn('string','categorias');
     tabela.addColumn('number','valores');
+    tabela.addColumn({type: 'number', role:'annotation'});
         tabela.addRows([
-            ['Educação',2000],
-            ['Transporte',500],
-            ['Lazer',230],
-            ['Saúde',100],
-            ['Cartão de crédito', 900],
-            ['Alimentação', 260]
+            ['Educação',2000,2000],
+            ['Transporte',500,500],
+            ['Lazer',230,230],
+            ['Saúde',100,100],
+            ['Cartão de crédito',900,900],
+            ['Alimentação',260,260]
         ]);
+        var opcoes = {
+            title: 'Tipos de Gastos',
+            height:400,
+            width:800,
+            vAxis: {gridlines:{count:0,color: 'transparent'}},
+            legend: 'none'
+        }
 
         var grafico = new google.visualization.ColumnChart(
             document.getElementById('graficoColunaSurpresa'));
-        grafico.draw(tabela);
+        grafico.draw(tabela,opcoes);
 
 
 
