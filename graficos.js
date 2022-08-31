@@ -113,13 +113,14 @@ function desenharGraficos(){
     tabela.addColumn('string','categorias');
     tabela.addColumn('number','valores');
     tabela.addColumn({type: 'number', role:'annotation'});
+    tabela.addColumn({type: 'string', role:'style'});
         tabela.addRows([
-            ['Educação',2000,2000],
-            ['Transporte',500,500],
-            ['Lazer',230,230],
-            ['Saúde',100,100],
-            ['Cartão de crédito',900,900],
-            ['Alimentação',260,260]
+            ['Educação',2000,2000,'blue'],
+            ['Transporte',500,500,'grey'],
+            ['Lazer',230,230,'grey'],
+            ['Saúde',100,100,'grey'],
+            ['Cartão de crédito',900,900,'#8904d1'],
+            ['Alimentação',260,260,'grey']
         ]);
         var opcoes = {
             title: 'Tipos de Gastos',
