@@ -1,8 +1,10 @@
 function desenharGraficos(){
-    //pizza
+    // grafico de pizza
     var tabela = new google.visualization.DataTable();
+    //colunas
     tabela.addColumn('string','categorias');
     tabela.addColumn('number','valores');
+    //linhas
         tabela.addRows([
             ['Educação',2000],
             ['Transporte',500],
@@ -11,7 +13,7 @@ function desenharGraficos(){
             ['Cartão de crédito', 900],
             ['Alimentação', 260]
         ]);
-
+    //opcoes    
         var opcoes = {
             title: 'Tipos de Gastos',
             height: 500,
@@ -28,14 +30,16 @@ function desenharGraficos(){
                 5:{color:'grey'}
             }
         };
-
+    //desenhando grafico    
     var grafico = new google.visualization.PieChart(document.getElementById('graficoPizza'));/*gerando*/
     grafico.draw(tabela, opcoes);
 
-    //linha
+    //grafico de linha
     tabela = new google.visualization.DataTable();
+    //coluas da tabela
     tabela.addColumn('string','Mês');
     tabela.addColumn('number','Gastos');
+    //linhas da tabela    
         tabela.addRows([
             ['jan',800],
             ['fev',400],
@@ -70,7 +74,7 @@ function desenharGraficos(){
     var grafico = new google.visualization.LineChart(document.getElementById('graficoLinha'));
     grafico.draw(tabela,opcoes);
     
-    //colunas
+    //grafico de colunas
     var tabela = google.visualization.arrayToDataTable(
     [
             ['Mês','Entrada','Saída'],
@@ -108,12 +112,14 @@ function desenharGraficos(){
         document.getElementById('graficoColuna')); 
     grafico.draw(tabela,opcoes); 
     
-    //colunas supresa
+    //grafico de barras
     var tabela = new google.visualization.DataTable();
+
     tabela.addColumn('string','categorias');
     tabela.addColumn('number','valores');
     tabela.addColumn({type: 'string', role:'annotation'});
     tabela.addColumn({type: 'string', role:'style'});
+        
         tabela.addRows([
             ['Educação',2000,'R$2000','blue'],
             ['Transporte',500,'R$500','grey'],
@@ -122,24 +128,33 @@ function desenharGraficos(){
             ['Cartão de crédito',900,'R$900','#8904d1'],
             ['Alimentação',260,'R$260','grey']
         ]);
-
+    //ordenando a tabela pela coluna de indice 1    
         tabela.sort([{column:1,desc: true}]);
 
         var opcoes = {
             title: 'Tipos de Gastos',
             height:400,
             width:800,
-            vAxis: {gridlines:{count:0,color: 'transparent'}},
+            vAxis: {
+                gridlines:{
+                    count:0,color: 'transparent'
+                }
+            },
             legend: 'none',
-            hAxis: {gridlines:{color: 'transparent'},
+            hAxis: {
+                gridlines:{
+                    color: 'transparent'
+                },
                     format: 'currency',
                     textPosition:'none'     
                 },
-            annotations: {alwaysOutside: true}
+            annotations:{
+                alwaysOutside: true
+            }
         }
 
         var grafico = new google.visualization.BarChart(
-            document.getElementById('graficoColunaSurpresa'));
+            document.getElementById('graficoBarras'));
         grafico.draw(tabela,opcoes);
 
 
