@@ -113,23 +113,23 @@ function desenharGraficos(){
     grafico.draw(tabela,opcoes); 
     
     //grafico de barras
-    var tabela = new google.visualization.DataTable();
-
-    tabela.addColumn('string','categorias');
-    tabela.addColumn('number','valores');
-    tabela.addColumn({type: 'string', role:'annotation'});
-    tabela.addColumn({type: 'string', role:'style'});
+    var dadosJson = $.ajax({
         
-        tabela.addRows([
-            ['Educação',2000,'R$2000','blue'],
-            ['Transporte',500,'R$500','grey'],
-            ['Lazer',230,'R$230','grey'],
-            ['Saúde',50,'R$50','grey'],
-            ['Cartão de crédito',900,'R$900','#8904d1'],
-            ['Alimentação',260,'R$260','grey']
-        ]);
+        url:'https://gist.githubusercontent.com/lucashtw/47578cc3e20f6abf8eb07d8dfbef0c87/raw/e849314647be59ceb5add72659f0b9cc1bea592c/dados.json',
+        dataType: 'json',
+        async: false
+    }).responseText
+
+    
+    
+    var tabela = new google.visualization.DataTable(dadosJson);
+
+    
     //ordenando a tabela pela coluna de indice 1    
         tabela.sort([{column:1,desc: true}]);
+        
+        //var conversao = tabela.toJSON();
+            //console.log(conversao)
 
         var opcoes = {
             title: 'Tipos de Gastos',
