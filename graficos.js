@@ -160,7 +160,8 @@ function desenharGraficos(){
         
         //grafico de barras com arquivo json
         var dadosJson = $.ajax({//dadosJson variavel que armazena os dados do arquivo
-            url: 'dados.json',
+            url:'https://gist.githubusercontent.com/lucashtw/7f7343e3571a67065c8616d690ecce7a/raw/d2e58ce2c46eb9a7b094498cc5a55038b81eaf12/dados.json',
+            //url: 'dados.json',
             dataType: 'json',
             async: false
         }).responseText;
@@ -168,11 +169,31 @@ function desenharGraficos(){
         //criar a tabela recebendo os dados da variavel
         var tabela = new google.visualization.DataTable(dadosJson)
 
+        tabela.sort([{column:1,desc: true}]);
+
+        var opcoes = {
+            title: 'Usuários e poupanças',
+            height:400,
+            width:800,
+            legend: 'none',
+            hAxis: {
+                gridlines:{
+                    color:'transparent'
+                },
+                textPosition: 'none'
+            },
+            annotations:
+            {
+                alwaysOutside: true
+            }
+            
+        }
+
         //define o tipo de grafico e envia para a div no html
         var grafico = new google.visualization.BarChart(
             document.getElementById('graficoBarrasJson'));
          
         //desenha o grafico    
-        grafico.draw(tabela);    
+        grafico.draw(tabela,opcoes);    
 
 }
