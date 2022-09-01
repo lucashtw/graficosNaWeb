@@ -156,7 +156,19 @@ function desenharGraficos(){
         var grafico = new google.visualization.BarChart(
             document.getElementById('graficoBarras'));
         grafico.draw(tabela,opcoes);
+        
+        
+        //grafico de barras com arquivo json
+        var dadosJson = $.ajax({
+            url: 'dados.json',
+            dataType: 'json',
+            async: false
+        }).responseText;
+        
+        var tabela = new google.visualization.DataTable(dadosJson)
 
-
+        var grafico = new google.visualization.BarChart(
+            document.getElementById('graficoBarrasJson'));
+        grafico.draw(tabela);    
 
 }
