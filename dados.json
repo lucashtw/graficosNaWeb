@@ -1,0 +1,64 @@
+{
+    "cols": [
+        {
+            "label":"Nome",
+            "type":"string"
+        },
+        {
+            "label":"Valor",
+            "type":"number"
+        }
+    ],
+
+    "rows": [
+        {"c":[
+                {"v":"João Antônio Marques","f":null},
+                {"v":25.110,"f":"R$25.110"}
+             ]
+        },
+        {"c":[
+            {"v":"Ana Siqueira","f":null},
+            {"v":10.020,"f":"R$10.020"}
+         ]
+        },
+        {"c":[
+            {"v":"Alcides V. de Oliveira","f":null},
+            {"v":30.240,"f":"R$30.240"}
+         ]
+        },
+        {"c":[
+            {"v":"Rafael Antunes","f":null},
+            {"v":2.310,"f":"R$2.310"}
+         ]
+        },
+        {"c":[
+            {"v":"Bianca M. Sampaio","f":null},
+            {"v":8.542,"f":"R$8.542"}
+         ]
+        },
+        {"c":[
+            {"v":"Victor Barbosa","f":null},
+            {"v":6.521,"f":"R$6.521"}
+         ]
+        },
+        {"c":[
+            {"v":"Maria do Carmo Prado","f":null},
+            {"v":12.327,"f":"R$12.327"}
+         ]
+        },
+        {"c":[
+            {"v":"Maria Heloisa de Almeida","f":null},
+            {"v":9.764,"f":"R$9.764"}
+         ]
+        },
+        {"c":[
+            {"v":"Rita de Cássia Cuaron","f":null},
+            {"v":20.174,"f":"R$20.174"}
+         ]
+        }
+
+    ]
+
+}
+
+
