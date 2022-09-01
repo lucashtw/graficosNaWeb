@@ -159,16 +159,20 @@ function desenharGraficos(){
         
         
         //grafico de barras com arquivo json
-        var dadosJson = $.ajax({
+        var dadosJson = $.ajax({//dadosJson variavel que armazena os dados do arquivo
             url: 'dados.json',
             dataType: 'json',
             async: false
         }).responseText;
         
+        //criar a tabela recebendo os dados da variavel
         var tabela = new google.visualization.DataTable(dadosJson)
 
+        //define o tipo de grafico e envia para a div no html
         var grafico = new google.visualization.BarChart(
             document.getElementById('graficoBarrasJson'));
+         
+        //desenha o grafico    
         grafico.draw(tabela);    
 
 }
